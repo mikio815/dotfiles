@@ -1,0 +1,74 @@
+format = """
+$directory\
+[](fg:#ff4081 bg:#0d1117)\
+$git_branch\
+$git_status\
+[](fg:#0d1117)\
+\n$character
+"""
+
+right_format = """
+$cmd_duration\
+$username\
+[](fg:#44475a)\
+$time
+"""
+
+add_newline = true
+
+[username]
+style_user = "fg:#ffffff bold"
+style_root = "fg:#ff4081 bold"
+format = "user: [$user]($style) "
+disabled = false
+
+[fill]
+symbol = ' '
+
+[directory]
+style = "fg:#ffffff bg:#0d1117 bold"
+truncation_length = 10
+truncate_to_repo = false
+truncation_symbol = "…/"
+read_only = " 🔒"
+read_only_style = "fg:#ff4081 bg:#0d1117"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+
+
+[directory.substitutions]
+"Documents" = "📄"
+"Downloads" = "⬇️"
+"Music" = "🎵"
+"Pictures" = "🖼️"
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+symbol = ""
+style = "bg:#0d1117"
+format = '[[ $symbol $branch ](fg:#ff4081 bg:#0d1117)]($style)'
+
+[git_status]
+style = "bg:#0d1117"
+format = '[[($all_status$ahead_behind )](fg:#ff4081 bg:#0d1117)]($style)'
+
+[cmd_duration]
+min_time = 1
+style = "fg:#ff4081"
+format = "[$duration]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#ffffff"
+format = "  $time"
+
+
+[character]
+success_symbol = "[❯](bold fg:#00F0FF)"
+error_symbol = "[✖](bold fg:#ff5555)"
+vimcmd_symbol = "[V](bold fg:#ff4081)"
