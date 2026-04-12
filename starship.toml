@@ -1,4 +1,5 @@
 format = """
+$python\
 $directory\
 [](fg:#ff4081 bg:#0d1117)\
 $git_branch\
@@ -72,3 +73,7 @@ format = "  $time"
 success_symbol = "[❯](bold fg:#00F0FF)"
 error_symbol = "[✖](bold fg:#ff5555)"
 vimcmd_symbol = "[V](bold fg:#ff4081)"
+
+[python]
+format = "[${virtualenv}](fg:#ff4081)"
+style = "bold"

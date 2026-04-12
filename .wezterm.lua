@@ -2,12 +2,16 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font_with_fallback {
+  "JetBrainsMono Nerd Font",
+  'HackGen Console',
+}
 config.font_size = 13.0
 config.use_ime = true
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 config.window_decorations = "RESIZE"
+
 
 config.window_frame = {
   inactive_titlebar_bg = "#0d1117",

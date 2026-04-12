@@ -113,4 +113,19 @@ export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 export PATH=$PATH:~/go/bin
 export C_INCLUDE_PATH="/usr/local/include:$C_INCLUDE_PATH"
 eval "$(starship init zsh)"
-neofetch
+
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/ryoheiueki/.opam/opam-init/init.zsh' ]] || source '/Users/ryoheiueki/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+eval "$(rbenv init - zsh)"
+# Added by Antigravity
+export PATH="/Users/ryoheiueki/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
